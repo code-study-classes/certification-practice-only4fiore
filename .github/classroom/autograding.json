@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "test-numbers",
+      "setup": "npm install",
+      "run": "npx jest __tests__/numbers.test.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "test-boolean",
+      "setup": "npm install",
+      "run": "npx jest __tests__/boolean.test.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "test-loops",
+      "setup": "npm install",
+      "run": "npx jest __tests__/loops.test.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "test-branching",
+      "setup": "npm install",
+      "run": "npx jest __tests__/branching.test.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "test-strings",
+      "setup": "npm install",
+      "run": "npx jest __tests__/strings.test.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

@@ -31,3 +31,12 @@ export const countWordsWithSameLetters = (sentence) => {
   }
 };
 
+export const countWordsWithA = (str) => {
+  let count = 0;
+  const str = str.split('');
+  for (let i = 0; i < str.length; i += 1)
+    if (str[i].includes('A', 'a')) {
+      return count += 1;
+    }
+  return count;
+};

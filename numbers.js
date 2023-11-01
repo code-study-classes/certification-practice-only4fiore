@@ -1,55 +1,68 @@
-const calculateDistance = (x1, x2) => Math.abs(x1 - x2);
+import { Scope } from 'eslint-scope';
 
-const calculateSegmentProduct = (A, B, C) => {
-  const AClength = Math.abs(C - A);
-  const BClength = Math.abs(C - B);
-  return AClength * BClength;
-};
+export const calculateDistance = (x1, x2) => Math.abs(x1 - x2);
 
-const calculateKilobytes = (fileSizeInByte) => {
-  if (fileSizeInByte % 1024 === 0) {
-    return fileSizeInByte / 1024;
+export const calculateSegmentProduct = (A, B, C) => Math.abs(A - C) * (B - C);
+
+export const calculateKilobytes = (fileSizeInBytes) => Math.floor(fileSizeInBytes / 1024);
+
+export const calculateSegments = (lengthA, lengthB) => Math.floor(lengthA / lengthB);
+
+export const calculateDigitSum = (twoDigitNumber) => {
+  let count = 0;
+  const twoDigitNumberS = twoDigitNumber.toString();
+  for (let i = 0; i < twoDigitNumberS.length; i += 1) {
+    count += parseInt(twoDigitNumberS[i], 10);
   }
-  return Math.floor(fileSizeInByte / 1024);
+  return count;
 };
 
-const calculateSegments = (lengthA, lengthB) => Math.floor(lengthA / lengthB);
-
-const calculateDigitSum = (twoDigitNumber) => {
-  const arr = twoDigitNumber.toString();
-  return twoDigitNumber = parseInt(arr[0], 10) + parseInt(arr[1], 10);
+export const swapHundredsAndTens = (twoDigitNumber) => {
+  const a = Math.floor(twoDigitNumber / 100);
+  const b = Math.floor(twoDigitNumber / 10) % 10;
+  const c = Math.floor(twoDigitNumber % 10);
+  return parseInt(`${b}${a}${c}`, 10);
 };
 
-const swapHundredsAndTens = (twoDigitNumber) => {
-  const arr = twoDigitNumber.toString();
-  return twoDigitNumber = parseInt((arr[1], 10) + parseInt(arr[0], 10) + parseInt(arr[2], 10), 10);
-};
-
-const getHundredsDigit = (number) => {
-  if (number > 999) {
-    return Math.trunc(number / 100) % 10;
+export const getHundredsDigit = (twoDigitNumber) => {
+  if (twoDigitNumber < 999) {
+    return 0;
   }
-  return 0;
+  const result = Math.floor(twoDigitNumber / 100) % 10;
+  return result;
 };
 
-const getFullHours = (seconds) => {
-  if (typeof seconds !== 'number' || seconds < 0 || !Number.isInteger(seconds)) {
-    throw ''; // mozilla//
+export const getFullHours = (seconds) => Math.floor(seconds / 3600);
+
+export const getDayOfWeek = (dayOfYear) => {
+  switch (dayOfYear % 7) {
+    case 0:
+      return 7;
+      break;
+    case 1:
+      return 1;
+      break;
+    case 2:
+      return 2;
+      break;
+    case 3:
+      return 3;
+      break;
+    case 4:
+      return 4;
+      break;
+    case 5:
+      return 5;
+      break;
+    case 6:
+      return 6;
+      break;
+    default:
   }
-  const hours = Math.trunc(seconds / 3600);
-  return hours;
 };
 
-const getDayOfWeek = (DayOfYear) => (((DayOfYear + 1) % 7) - 1);
-
-const countSquares = (A, B, C) => {
-  const squaresByW = Math.floor(A / C);
-  const squaresByH = Math.floor(B / C);
-  return squaresByW * squaresByH;
-};
-
-export {
-  calculateDistance, calculateSegmentProduct, calculateKilobytes, calculateSegments,
-  calculateDigitSum, swapHundredsAndTens, getHundredsDigit, getFullHours,
-  getDayOfWeek, countSquares,
+export const countSquares = (A, B, C) => {
+  const squareHeight = Math.floor(A / C);
+  const squareWidth = Math.floor(B / C);
+  return squareHeight * squareWidth;
 };

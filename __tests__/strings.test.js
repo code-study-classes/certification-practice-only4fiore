@@ -79,7 +79,7 @@ describe('Group: strings', () => {
 
     expect(countWordsWithA('a b c d e')).toBe(1);
 
-    expect(countWordsWithA('Hello world Wicked')).toBe(1);
+    expect(countWordsWithA('Hello world Wicked')).toBe(0);
   });
 
   test('task7', () => {
